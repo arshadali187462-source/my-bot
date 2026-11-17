@@ -1,3 +1,4 @@
+import os 
 from flask import Flask
 import threading
 flask_app = Flask(__name__)
@@ -5,7 +6,7 @@ flask_app = Flask(__name__)
 def home():
     return "Bot is running!"
 threading.Thread(target=lambda: flask_app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 10000))), daemon=True).start()
- os
+
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 import google.generativeai as genai
